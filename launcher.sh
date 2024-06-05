@@ -29,7 +29,7 @@ EOF
     )
 
     # Send the JSON payload via curl
-    curl -X POST https://scraper.bluebecks.com/data -H "Content-Type: application/json" -d "$json_payload"
+    curl -X POST http://localhost:3000/data -H "Content-Type: application/json" -d "$json_payload"
   fi
 done
 
