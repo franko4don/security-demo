@@ -47,14 +47,14 @@ app.post('/data', async (req, res) => {
 });
 
 // GET endpoint to retrieve data
-app.get('/data', async (req, res) => {
-  try {
-    const data = await Data.find({});
-    res.status(200).send(data);
-  } catch (error) {
-    res.status(500).send({ error: 'Failed to retrieve data' });
-  }
-});
+// app.get('/data', async (req, res) => {
+//   try {
+//     const data = await Data.find({});
+//     res.status(200).send(data);
+//   } catch (error) {
+//     res.status(500).send({ error: 'Failed to retrieve data' });
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
