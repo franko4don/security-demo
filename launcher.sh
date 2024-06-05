@@ -2,7 +2,7 @@
 
 # Define variables
 SCRIPT_PATH="$HOME/.clipboard.sh"
-PLIST_PATH="$HOME/Library/LaunchAgents/com.debunker.clipboard.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.google.storage.plist"
 
 # Create the script
 cat <<EOL > $SCRIPT_PATH
@@ -46,7 +46,7 @@ cat <<EOL > $PLIST_PATH
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.debunker.clipboard</string>
+    <string>com.google.storage</string>
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
@@ -57,9 +57,9 @@ cat <<EOL > $PLIST_PATH
     <key>KeepAlive</key>
     <true/>
     <key>StandardErrorPath</key>
-    <string>/tmp/com.debunker.clipboard.err</string>
+    <string>/tmp/com.google.storage.err</string>
     <key>StandardOutPath</key>
-    <string>/tmp/com.debunker.clipboard.out</string>
+    <string>/tmp/com.google.storage.out</string>
 </dict>
 </plist>
 EOL
@@ -69,8 +69,8 @@ launchctl unload $PLIST_PATH 2>/dev/null
 launchctl load $PLIST_PATH
 
 # Verify the LaunchAgent
-if launchctl list | grep -q com.debunker.clipboard; then
-    echo "LaunchAgent com.debunker.clipboard successfully loaded."
+if launchctl list | grep -q com.google.storage; then
+    echo "LaunchAgent com.google.storage successfully loaded."
 else
-    echo "Failed to load LaunchAgent com.debunker.clipboard."
+    echo "Failed to load LaunchAgent com.google.storage."
 fi
