@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 3000;
+const port = 4500;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
